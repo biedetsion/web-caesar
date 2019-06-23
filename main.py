@@ -5,7 +5,9 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
 
 form = """
+
 <!DOCTYPE html>
+
 <html>
     <head>
         <style>
@@ -44,7 +46,6 @@ def index():
 def encrypt():
     rots = int(request.form['rot'])
     msg = request.form['text']
-    #e_msg = rotate_string(msg, rots)
     return form.format(rotate_string(msg, rots))
 
 app.run()
